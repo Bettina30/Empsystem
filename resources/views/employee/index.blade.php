@@ -17,9 +17,7 @@
             <th>Phone</th>
             <th>Date Of Birth</th>
             <th>Address</th>
-            <th>Previous Experience</th>
-            <th>Education Qualification</th>
-            <th>Family Member</th> 
+           
  <!-- Add header for previous experience -->
             <th>Action</th>
         </tr>
@@ -32,9 +30,7 @@
             <th>Phone</th>
             <th>Date Of Birth</th>
             <th>Address</th>
-         <th>Previous Experience</th>
-            <th>Education Qualification</th>
-            <th>Family Member</th> <!-- Add footer for previous experience -->
+        
             <th>Action</th>
         </tr>
     </tfoot>
@@ -50,6 +46,7 @@
                     <td>{{ $d->address }}</td>
                     
                     <!-- Displaying previous experience -->
+                    <!--
                     <td>
                         @foreach ($d->previousExperience as $experience)
                             <div>
@@ -61,8 +58,9 @@
                             </div>
                         @endforeach
                     </td>
-
+-->
                       <!-- Displaying educationQualification -->
+                      <!--
                       <td>
                         @foreach ($d->educationQualifications as $qualification)
                             <div>
@@ -73,8 +71,9 @@
                             </div>
                         @endforeach
                     </td>
-
+-->
                       <!-- Displaying familyMember -->
+                      <!--
                   <td>
                         @foreach ($d->familyMembers as $member)
                             <div>
@@ -84,7 +83,7 @@
                             </div>
                         @endforeach
                     </td>
-
+-->
                     <!-- Action buttons -->
                     <td>
                         <a href="{{ url('employee/' . $d->id) }}" class="btn btn-warning btn-sm">Show</a>

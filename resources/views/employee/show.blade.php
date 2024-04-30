@@ -34,60 +34,52 @@
 
                                <!-- Previous Experience -->
                                @foreach($data->previousExperience as $experience)
-                              <tr>
-                                 <th>Company Name</th>
-                                     <td>{{ $experience->company_name }}</td>
-                              </tr>
-                              <tr>
-                                   <th>Position</th>
-                                   <td>{{ $experience->position }}</td>
+                               <tr>
+                               <th>Company Name</th>
+                                  <td>{{ $experience->company_name }}</td>
                               </tr>
                                <tr>
-                                    <th>Start Date</th>
-                                    <td>{{ $experience->start_date }}</td>
-                                       </tr>
-                                      <tr>
-                                    <th>End Date</th>
-                                     <td>{{ $experience->end_date }}</td>
-                                     </tr>
-                                  @endforeach
+                               <th>Position</th>
+                               <td>{{ $experience->position }}</td>
+                              </tr>
+                               <tr>
+                               <th>Start Date</th>
+                                   <td>{{ $experience->start_date }}</td>
+                                   </tr>
+                               <tr>
+                              <th>End Date</th>
+                               <td>{{ $experience->end_date }}</td>
+                              </tr>
+                              @endforeach
 
-                                <!-- Education Qualifications -->
-                                @foreach($data->educationQualifications as $education)
-                                  <tr>
-                                     <th>Degree</th>
-                                     <td>{{ $education->degree }}</td>
-                                  </tr>
-                                  <tr>
+                              <!-- Education Qualifications -->
+                              @foreach($data->educationQualifications as $education)
+                              <tr>
+                               <th>Degree</th>
+                                 <td>{{ $education->degree }}</td>
+                                   </tr>
+                                    <tr>
                                      <th>Institution</th>
-                                     <td>{{ $education->institution }}</td>
+                                      <td>{{ $education->institution }}</td>
                                   </tr>
-                                  <tr>
-                                       <th>Graduation Date</th>
-                                        <td>{{ $education->graduation_date }}</td>
-                                  </tr>
-                                @endforeach
-
-                                  <!-- Family Members -->
-                                @foreach($data->familyMembers as $member)
-                                <tr>
-                                <th>Family Member Name</th>
-                                <td>{{ $member->famname }}</td>
-                           </tr>
-                            <tr>
-                                  <th>Relationship</th>
-                                  <td>{{ $member->relationship }}</td>
+                                 <tr>
+                              <th>Graduation Date</th>
+                             <td>{{ $education->graduation_date }}</td>
                              </tr>
                              @endforeach
-    
-                            </table>
-                               
+
+                             <!-- Family Members -->
+                             @foreach($data->familyMembers as $member)
+                              <tr>
+                                 <th>Family Member Name</th>
+                                 <td>{{ $member->famname }}</td>
+                             </tr>
+                              <tr>
+                                    <th>Relationship</th>
+                                    <td>{{ $member->relationship }}</td>
+                              </tr>
+                             @endforeach  
+                             </table>                             
                             </div>
-                        </div>
-                     
-
-
-
-
-                        
+                        </div>                           
 @endsection

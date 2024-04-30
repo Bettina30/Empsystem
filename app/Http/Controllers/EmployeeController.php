@@ -19,9 +19,8 @@ class EmployeeController extends Controller
     public function index()
 {
     
-    $data = Employee::with('previousExperience')->get();
-   $data = Employee::with('educationQualifications')->get();
-    $data = Employee::with('familyMembers')->get();
+     $data = Employee::with(['previousExperience','educationQualifications', 'familyMembers'])->get();
+   
 
     // Return the view with the data
     return view('employee.index', compact('data'));
@@ -52,15 +51,15 @@ class EmployeeController extends Controller
         'phone' => 'required',
         'date_of_birth' => 'required',
         'address' => 'required',
-        'company_name' => 'required', // Validate each item in the array
-        'position' => 'required',
-        'start_date' => 'required',
-        'end_date' => 'required', // Validate that end date is after start date
-        'degree' => 'required', // Validate each item in the array
-        'institution' => 'required',
-        'graduation_date' => 'required',
-        'famname' => 'required', // Validate each item in the array
-        'relationship' => 'required',
+       // 'company_name' => 'required', // Validate each item in the array
+      //  'position' => 'required',
+      //  'start_date' => 'required',
+       // 'end_date' => 'required', // Validate that end date is after start date
+       // 'degree' => 'required', // Validate each item in the array
+       // 'institution' => 'required',
+        //'graduation_date' => 'required',
+        //'famname' => 'required', // Validate each item in the array
+        //'relationship' => 'required',
     ]);
 
     $data = new Employee();

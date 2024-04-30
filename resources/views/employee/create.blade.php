@@ -57,14 +57,12 @@
                                         <input type="text" name="address" class="form-control" />
                                     </td>
                                   </tr>
-
+                                  <table class="table table-bordered">
+                                  <th style="text-align: center;">Previous Experience</th>
                                   <tr>
-                                    <th style="text-align: center;">Previous Experience</th>
-                                  </tr>
-
-                                       <tr>
-                                       <th>Company Name</th>
-                                          <td>
+        
+                               <th>Company Name</th>
+                                <td>
                                            <input type="text" name="company_name[]" class="form-control" placeholder="Company Name" required />
                                            </td>
                                    </tr>
@@ -87,12 +85,58 @@
                                                 <input type="date" name="end_date[]" class="form-control" required />
                                               </td>
                                       </tr>
-
+    
                                       <tr>
-                                    <th style="text-align: center;">Education Qualification</th>
-                                  </tr>
+                                       <td colspan="2">
+                                         <button type="button" onclick="addExperience()">Add Experience</button>
+                                        </td>
+                                         </tr>
+                                  </table>
+                                   <div id="previous-experience"></div>
 
-                                       <tr>
+ <script>
+    function addExperience() {
+        var container = document.querySelector('#previous-experience');
+        var experienceDiv = document.createElement('div');
+        experienceDiv.className = 'experience';
+        experienceDiv.innerHTML = `
+        <tr>
+        
+        <th>Company Name</th>
+         <td>
+                    <input type="text" name="company_name[]" class="form-control" placeholder="Company Name" required />
+                    </td>
+            </tr>
+
+            <tr>
+                  <th>Position</th>
+                    <td>
+                       <input type="text" name="position[]" class="form-control" placeholder="Position" required />
+                       </td>
+             </tr>
+            <tr>
+                      <th>Start Date</th>
+                      <td>
+                           <input type="date" name="start_date[]" class="form-control" required />
+                      </td>
+              </tr>
+                <tr>
+                      <th>End Date</th>
+                     <td>
+                         <input type="date" name="end_date[]" class="form-control" required />
+                       </td>
+               </tr>
+        `;
+        container.appendChild(experienceDiv);
+    }
+</script>
+
+
+                                  <table class="table table-bordered">
+                                  <tr>
+                                     <th style="text-align: center;">Education Qualification</th>
+                                  </tr>
+                                  <tr>
                                        <th>Degree</th>
                                           <td>
                                            <input type="text" name="degree[]" class="form-control" placeholder="Degree" required />
@@ -111,12 +155,49 @@
                                                   <input type="date" name="graduation_date[]" class="form-control" required />
                                              </td>
                                      </tr>
-                                       
-                                      <tr>
-                                    <th style="text-align: center;">Family Member </th>
-                                  </tr>
+                                   <tr>
+                               <td colspan="2">
+                                <button type="button" onclick="addEducation()">Add Education Qualification</button>
+                                </td>
+                                 </tr>
+                              </table>
+                             <div id="education-qualification"></div>
+<script>
+    function addEducation() {
+        var container = document.querySelector('#education-qualification');
+        var educationDiv = document.createElement('div');
+        educationDiv.className = 'education';
+        educationDiv.innerHTML = `
+        <tr>
+                                       <th>Degree</th>
+                                          <td>
+                                           <input type="text" name="degree[]" class="form-control" placeholder="Degree" required />
+                                           </td>
+                                   </tr>
+        
+                                   <tr>
+                                         <th>Institution</th>
+                                           <td>
+                                              <input type="text" name="institution[]" class="form-control" placeholder="institution" required />
+                                              </td>
+                                    </tr>
+                                   <tr>
+                                             <th>Graduation Date</th>
+                                             <td>
+                                                  <input type="date" name="graduation_date[]" class="form-control" required />
+                                             </td>
+                                     </tr>
+        `;
+        container.appendChild(educationDiv);
+    }
+</script>
 
-                                       <tr>
+                                     <!-- Family Member -->
+                                <table class="table table-bordered">
+                                <tr>
+                                <th style="text-align: center;">Family Member</th>
+                                  </tr>
+                                   <tr>
                                        <th>Family Member Name</th>
                                           <td>
                                            <input type="text" name="famname[]" class="form-control" placeholder="Family Member Name" required />
@@ -129,6 +210,36 @@
                                               <input type="text" name="relationship[]" class="form-control" placeholder="Relationship" required />
                                               </td>
                                     </tr>
+                                <tr>
+                                  <td colspan="2">
+                                 <button type="button" onclick="addFamilyMember()">Add Family Member</button>
+                                  </td>
+                                 </tr>
+                                </table>
+                                 <div id="family-member"></div>
+<script>
+    function addFamilyMember() {
+        var container = document.querySelector('#family-member');
+        var familyMemberDiv = document.createElement('div');
+        familyMemberDiv.className = 'family-member';
+        familyMemberDiv.innerHTML = `
+        <tr>
+                                       <th>Family Member Name</th>
+                                          <td>
+                                           <input type="text" name="famname[]" class="form-control" placeholder="Family Member Name" required />
+                                           </td>
+                                   </tr>
+        
+                                   <tr>
+                                         <th>Relationship</th>
+                                           <td>
+                                              <input type="text" name="relationship[]" class="form-control" placeholder="Relationship" required />
+                                              </td>
+                                    </tr>
+        `;
+        container.appendChild(familyMemberDiv);
+    }
+</script>
 
                                   <tr>
                                     <td colspan="2">
@@ -138,8 +249,5 @@
                                 </form>
                             </div>
                         </div>
-
-
-
-                        
+                      
 @endsection
